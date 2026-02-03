@@ -41,7 +41,7 @@ const Values = () => {
     ]
 
     const renderItems = (item) => (
-        <div className='flex justify-center items-center gap-5'>
+        <div className='flex justify-center items-center gap-5 mb-10 md:mb-0'>
             {/* Trust Content */}
             <div className='flex flex-col'>
                 <h1 className='font-bold text-3xl'>{item.title}</h1>
@@ -59,28 +59,29 @@ const Values = () => {
     return (
         <div className='flex flex-col'>
             {/* Heading of Our Values */}
-            <div className=''>
+            <div className='mb-10 md:mb-0'>
                 <Heading highlight="Our" normal="Values" />
             </div>
 
             {/* Content Part */}
-            <div className='flex justify-center items-center h-170 gap-10 -mt-10'>
+            <div className='md:flex justify-center items-center 
+            md:h-170 gap-10 md:-mt-10'>
 
                 {/* For value[0] */}
-                <div className='flex flex-col justify-around h-full'>
+                <div className='flex flex-col md:justify-around h-full'>
                     {values[0].map((obj) => (
                         renderItems(obj)
                     ))}
                 </div>
 
                 {/* For value[1] */}
-                <div className='flex flex-col object-cover h-screen justify-center items-center'>
+                <div className='md:flex hidden flex-col object-cover h-screen justify-center items-center'>
                     <img src={values[1]} alt="Basket of fruits" className='w-150 h-150 object-contain'/>
                 </div>
 
 
                 {/* For value[2] */}
-                <div className='flex flex-col h-full justify-around'>
+                <div className='flex flex-col h-full md:justify-around'>
                     {values[2].map((obj) => (
                         renderItems(obj)
                     ))}

@@ -8,12 +8,14 @@ const Products = () => {
   const [currentCategory, setCurrentCategory] = useState("All");
 
   return (
-    <div>
+    <div className='w-full'>
         <div className='mb-10'>
             <Heading highlight="Our" normal="Products" />
         </div>
 
-        <Tabs currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}/>
+        <div className='w-full'>
+          <Tabs currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}/>
+        </div>
         <Items currentCategory={currentCategory}/>
     </div>
   )

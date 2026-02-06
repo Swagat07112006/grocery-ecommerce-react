@@ -9,8 +9,11 @@ const Card = ({ item }) => {
             <div className='flex flex-col w-full h-full p-4 rounded-lg shadow-lg justify-between'>
                 {/* Header */}
                 <div className='flex justify-between items-center mb-2'>
-                    <FaHeart className='text-xl' />
-                    <div className='bg-orange-500 rounded-lg p-2 text-white'>
+                    <div className='text-3xl text-zinc-300'>
+                        <FaHeart className='text-xl' />
+                    </div>
+
+                    <div className='bg-orange-500 rounded-lg p-2 text-white cursor-pointer'>
                         <FaPlus className='text-sm' />
                     </div>
                 </div>
@@ -20,7 +23,7 @@ const Card = ({ item }) => {
                     <img 
                         src={item.image} 
                         alt={item.name}
-                        className='w-34 h-34 object-cover rounded-lg'
+                        className='w-34 h-34 rounded-lg'
                     />
                 </div>
 

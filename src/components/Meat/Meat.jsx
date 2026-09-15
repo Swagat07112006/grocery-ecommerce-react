@@ -6,26 +6,52 @@ import { useProduct } from '../../contexts/ProductContext'
 import Card from '../Products/Card'
 import Button from '../Buttons/Button'
 import Heading from '../Heading/Heading'
+import { motion } from 'framer-motion'
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+}
+
+const itemVariant = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+}
 
 const Meat = () => {
 
   const [viewAll, setViewAll] = useState(false);
-    const { meatAndSeaFood } = useProduct();
-    const visibleProducts = viewAll ? meatAndSeaFood : meatAndSeaFood.slice(0, 8);
+  const { meatAndSeaFood } = useProduct();
+  const visibleProducts = viewAll ? meatAndSeaFood : meatAndSeaFood.slice(0, 8);
 
   return (
-    <div>
-        <Banner BannerImage={SeaFoodBanner}/>
+    <div className='min-h-screen bg-zinc-50 pb-20'>
+      <Banner BannerImage={SeaFoodBanner} />
 
-        
-      <Heading highlight="Meat" normal="and SeaFood" />
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className='bg-white pt-10 pb-5 mb-10 shadow-sm'
+      >
+        <Heading highlight="Meat" normal="and SeaFood" />
+      </motion.div>
 
-      <div>
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-8 mt-15'>
+      <div className='px-15'>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className='grid grid-cols-1 md:grid-cols-4 gap-8 mt-15'
+        >
           {visibleProducts.map(item => (
-            <Card key={item.id} item={item} />
+            <motion.div key={item.id} variants={itemVariant}>
+              <Card item={item} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
 
         <div className='mt-10 w-fit mx-auto' onClick={() => setViewAll(!viewAll)}>

@@ -24,7 +24,7 @@ const FadeInView = ({ children, id }) => (
 
 const Home = () => {
   return (
-    <div className='ml-15 mr-15 pb-20'>
+    <div className='w-full px-8 md:px-15 pb-20 flex flex-col gap-20 overflow-hidden'>
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -41,7 +41,7 @@ const Home = () => {
         <Values />
       </FadeInView>
 
-      <FadeInView>
+      <FadeInView id="products">
         <Products />
       </FadeInView>
 

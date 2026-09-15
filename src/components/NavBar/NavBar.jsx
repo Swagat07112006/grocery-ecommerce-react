@@ -25,7 +25,7 @@ const NavBar = () => {
     }, [])
 
     return (
-        <header className={`pt-5 pb-5 fixed top-0 left-0 right-0 bg-white transition-all duration-300 z-50 ${isScroll ? 'shadow-xl' : 'shadow-none'}`}>
+        <header className={`pt-5 fixed top-0 left-0 right-0 bg-white transition-all duration-300 z-50 ${isScroll ? 'shadow-xl' : 'shadow-none'}`}>
             <nav className='flex justify-between items-center pl-15 pr-15'>
                 <Link to="/">
                     <h1 className='text-2xl font-bold'>Gr<span className='font-bold text-orange-500 text-2xl'>O</span>cify</h1>

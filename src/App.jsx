@@ -7,6 +7,7 @@ import Fruits from './components/Fruits/Fruits'
 import Dairy from './components/Dairy/Dairy'
 import Meat from './components/Meat/Meat'
 import Checkout from './components/Checkout/Checkout'
+import Wishlist from './components/Wishlist/Wishlist'
 
 function App() {
 
@@ -34,6 +35,10 @@ function App() {
         {
           path: '/checkout',
           element: <Checkout />
+        },
+        {
+          path: '/wishlist',
+          element: <Wishlist />
         }
       ]
     },

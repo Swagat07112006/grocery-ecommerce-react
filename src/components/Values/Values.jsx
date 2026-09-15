@@ -64,19 +64,18 @@ const Values = () => {
             </div>
 
             {/* Content Part */}
-            <div className='md:flex justify-center items-center 
-            md:h-170 gap-10 md:-mt-10'>
+            <div className='md:flex justify-center items-center gap-10 py-10'>
 
                 {/* For value[0] */}
-                <div className='flex flex-col md:justify-around h-full'>
+                <div className='flex flex-col gap-10 md:justify-around h-full'>
                     {values[0].map((obj) => (
                         renderItems(obj)
                     ))}
                 </div>
 
                 {/* For value[1] */}
-                <div className='md:flex hidden flex-col object-cover h-screen justify-center items-center'>
-                    <img src={values[1]} alt="Basket of fruits" className='w-150 h-150 object-contain'/>
+                <div className='md:flex hidden flex-col object-cover justify-center items-center'>
+                    <img src={values[1]} alt="Basket of fruits" className='w-[400px] h-auto object-contain drop-shadow-2xl' />
                 </div>
 
 

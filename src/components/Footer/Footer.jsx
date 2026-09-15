@@ -3,7 +3,7 @@ import { FaAngleRight } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div className='mt-10 w-full'>
+        <div id="contact" className='mt-10 w-full'>
             <footer className='bg-zinc-100 py-20 w-screen -mx-20'>
                 <div className='max-w-7xl mx-auto px-6 md:px-8 lg:px-12 flex flex-wrap gap-y-14'>
                     <div className='flex-3 md:mr-0 mr-10'>
@@ -59,7 +59,7 @@ const Footer = () => {
                         </p>
 
                         <form action="" className='flex bg-white p-2 mt-6'>
-                            <input type="email" name="email" id="email" autoComplete='off' placeholder='Email adress' className='pl-5 h-5vh focus:outline-none'/>
+                            <input type="email" name="email" id="email" autoComplete='off' placeholder='Email adress' className='pl-5 h-5vh focus:outline-none' />
 
                             <button type="submit" className='bg-orange-400 text-white p-2 rounded-lg hover:bg-orange-600 cursor-pointer'>
                                 <FaAngleRight />

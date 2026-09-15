@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar'
 import { Search } from 'lucide-react'
 
@@ -20,47 +21,47 @@ const NavBar = () => {
         window.addEventListener('scroll', handleScroll)
 
         return () => window.removeEventListener('scroll', handleScroll)
-        
+
     }, [])
 
     return (
         <header className={`pt-5 pb-5 fixed top-0 left-0 right-0 bg-white transition-all duration-300 z-50 ${isScroll ? 'shadow-xl' : 'shadow-none'}`}>
             <nav className='flex justify-between items-center pl-15 pr-15'>
-                <a href="">
+                <Link to="/">
                     <h1 className='text-2xl font-bold'>Gr<span className='font-bold text-orange-500 text-2xl'>O</span>cify</h1>
-                </a>
+                </Link>
 
                 {/* Desktop menu */}
                 <ul className='md:flex hidden gap-10'>
                     <li className='font-medium'>
-                        <a href="/" className='-tracking-tighter text-orange-500 hover:text-orange-600 hover:underline'>Home</a>
+                        <Link to="/" className='-tracking-tighter text-orange-500 hover:text-orange-600 hover:underline'>Home</Link>
                     </li>
                     <li className='font-medium'>
-                        <a href="/" className='-tracking-tighter hover:text-orange-600 hover:underline'>About Us</a>
+                        <a href="/#about" className='-tracking-tighter hover:text-orange-600 hover:underline'>About Us</a>
                     </li>
                     <li className='font-medium'>
-                        <a href="/" className='-tracking-tighter hover:text-orange-600 hover:underline'>Process</a>
+                        <a href="/#process" className='-tracking-tighter hover:text-orange-600 hover:underline'>Process</a>
                     </li>
                     <li className='font-medium'>
-                        <a href="/" className='-tracking-tighter hover:text-orange-600 hover:underline'>Contact Us</a>
+                        <a href="#contact" className='-tracking-tighter hover:text-orange-600 hover:underline'>Contact Us</a>
                     </li>
                 </ul>
 
-                <SearchBar showMenu={showMenu} toggleMenu={toggleMenu}/>
+                <SearchBar showMenu={showMenu} toggleMenu={toggleMenu} />
 
                 {/* Mobile Menu */}
                 <ul className={`flex flex-col md:hidden gap-y-10 absolute bg-orange-500/15 backdrop-blur-xl rounded-xl shadow-xl items-center gap-x-10 p-10 top-30 transform -translate-x-1/2 transition-all duration-500 ${showMenu ? 'left-1/2' : '-left-full'}`}>
                     <li className='font-medium'>
-                        <a href="/" className='-tracking-tighter text-orange-500 hover:text-orange-600 hover:underline'>Home</a>
+                        <Link to="/" onClick={toggleMenu} className='-tracking-tighter text-orange-500 hover:text-orange-600 hover:underline'>Home</Link>
                     </li>
                     <li className='font-medium'>
-                        <a href="/" className='-tracking-tighter hover:text-orange-600 hover:underline'>About Us</a>
+                        <a href="/#about" onClick={toggleMenu} className='-tracking-tighter hover:text-orange-600 hover:underline'>About Us</a>
                     </li>
                     <li className='font-medium'>
-                        <a href="/" className='-tracking-tighter hover:text-orange-600 hover:underline'>Process</a>
+                        <a href="/#process" onClick={toggleMenu} className='-tracking-tighter hover:text-orange-600 hover:underline'>Process</a>
                     </li>
                     <li className='font-medium'>
-                        <a href="/" className='-tracking-tighter hover:text-orange-600 hover:underline'>Contact Us</a>
+                        <a href="#contact" onClick={toggleMenu} className='-tracking-tighter hover:text-orange-600 hover:underline'>Contact Us</a>
                     </li>
 
                     <li>

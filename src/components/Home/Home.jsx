@@ -8,17 +8,54 @@ import Discount from '../Discount/Discount'
 import Process from '../Process/Process'
 import Customer from '../Customer/Customer'
 import Footer from '../Footer/Footer'
+import { motion } from 'framer-motion'
+
+const FadeInView = ({ children, id }) => (
+  <motion.div
+    id={id}
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+  >
+    {children}
+  </motion.div>
+);
 
 const Home = () => {
   return (
-    <div className='ml-15 mr-15'>
+    <div className='ml-15 mr-15 pb-20'>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <Hero />
+      </motion.div>
+
+      <FadeInView>
         <Category />
+      </FadeInView>
+
+      <FadeInView id="about">
         <Values />
+      </FadeInView>
+
+      <FadeInView>
         <Products />
+      </FadeInView>
+
+      <FadeInView>
         <Discount />
+      </FadeInView>
+
+      <FadeInView id="process">
         <Process />
+      </FadeInView>
+
+      <FadeInView>
         <Customer />
+      </FadeInView>
     </div>
   )
 }

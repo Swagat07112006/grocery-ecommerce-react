@@ -6,6 +6,7 @@ import Layout from './components/Layout/Layout'
 import Fruits from './components/Fruits/Fruits'
 import Dairy from './components/Dairy/Dairy'
 import Meat from './components/Meat/Meat'
+import Checkout from './components/Checkout/Checkout'
 
 function App() {
 
@@ -29,6 +30,10 @@ function App() {
         {
           path: '/meat',
           element: <Meat />,
+        },
+        {
+          path: '/checkout',
+          element: <Checkout />
         }
       ]
     },
